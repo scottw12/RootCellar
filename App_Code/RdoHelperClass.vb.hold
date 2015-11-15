@@ -1,0 +1,33 @@
+﻿Imports Microsoft.VisualBasic
+Imports System.Net.Mail
+Imports System.Net
+Imports System.Xml.XPath
+Imports System.IO
+Imports System
+Imports System.Text
+Imports System.Web
+
+Public Class RdoHelperClass
+    Public Shared Sub SendError(errorMessage As String, stack As String, other As String)
+        Dim oMail As MailMessage = New MailMessage()
+        oMail.From = New MailAddress("website@rootcellarboxes.com")
+        oMail.To.Add(New MailAddress("dbccemtp@gmail.com"))
+        oMail.Subject = "Root Cellar Error"
+        oMail.Priority = MailPriority.High
+        oMail.IsBodyHtml = True
+        oMail.Body = "<html xmlns='http://www.w3.org/1999/xhtml' >"
+        oMail.Body &= "<head><title></title></head>"
+        oMail.Body &= "<body>"
+        oMail.Body &= errorMessage + "<br /><br />" + stack
+        oMail.Body &= "<br /><br />" + other
+        oMail.Body &= "</body>"
+        oMail.Body &= "</html>"
+        Dim htmlView2 As AlternateView = AlternateView.CreateAlternateViewFromString(oMail.Body, Nothing, "text/html")
+        oMail.AlternateViews.Add(htmlView2)
+        Dim smtpmail2 As New System.Net.Mail.SmtpClient
+        smtpmail2.Send(oMail)
+        oMail = Nothing
+    End Sub
+
+ 
+End Class

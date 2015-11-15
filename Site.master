@@ -1,0 +1,48 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Root Cellar</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="~/style.css" rel="stylesheet" type="text/css" />
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="container">
+  <div id="top">
+    <img id="Img1" runat="server" src="~/images/logo.png" />
+  </div>
+  <div class="container">
+    <ul id="navPyra">
+      <li><a id="A1" runat="server" href="http://www.rootcellarmo.com">HOME</a></li>
+      <li><a id="A2" runat="server" href="http://www.rootcellarmo.com/#!local-food-boxes/c8k2">LOCAL FOOD BOXES</a></li>
+      <li><a id="A3" runat="server" href="http://www.rootcellarmo.com/#!contact/c1z0x">CONTACT</a></li>
+        <li><asp:LoginView ID="LoginView1" runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul>
+                                <li><a id="loginLink" runat="server" href="~/Login">LOG IN</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                             <a id="A1" runat="server" class="username" href="~/Account/" title="User account">MY ACCOUNT</a>
+                                <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutText="LOG OFF" LogoutPageUrl="~/login.aspx" />
+                        </LoggedInTemplate>
+                    </asp:LoginView></li>
+    </ul>
+  </div>
+        <br /><br />
+        <div id="wrapper">
+        <div id="content">
+     <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+            </div></div> 
+    <div id="footer">  &copy; 2015 Root Cellar </div>
+</div>
+    </form>
+</body>
+</html>

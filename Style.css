@@ -1,0 +1,265 @@
+﻿body {
+margin: 0 auto;
+padding: 0;
+font-family: 'Times New Roman', sans-serif;
+line-height: 1.8em;
+color: #000;
+background: #fff url(images/burlap_bg.jpg) center repeat;
+}
+h1, h2 {
+    color:#46200e;
+}
+h3 {
+    color:#727524;
+    }
+.center {
+    text-align:center;
+    margin-right:auto;
+    margin-left:auto;
+}
+.threediv
+{
+padding:10px;
+-webkit-column-count:3; /* Chrome, Safari, Opera */
+-moz-column-count:3; /* Firefox */
+column-count:3;
+} 
+.threediv .col{
+    text-align:center;
+    vertical-align:bottom;
+}
+.price {
+    font-size:18px;
+    font-weight:bold;
+    color:#a20505;
+}
+			/* WRAP */
+#container {
+width: 980px;
+margin: 0 auto;
+padding: 0;
+color: #555;
+}
+			/* TOP BAR CONTAINER */
+#top {	
+margin: 0 auto;
+padding: 0;
+color: #000;
+background: #F8EDCB;
+min-height:262px;
+}
+			/* TOP BAR TITLE  */
+#top img {
+margin: 0 auto;
+padding: 0;
+min-height:186px;
+min-width:302px;
+display:block;
+top:10px;
+}
+			/* TOP NAV MENU */
+.container {
+    min-height:49px;
+    position:absolute;
+    top:203px;
+width: 1000px;
+background-color:#ABAF36;
+margin: 0 auto 0 -10px;
+padding: 0;
+text-align:center;
+}
+
+#navPyra {
+  padding: 0px;
+  list-style:none;
+  height:49px;
+  text-align:center;
+    margin-right:auto;
+    margin-left:auto;
+  width: 900px
+}
+#navPyra li {
+  display: inline;
+}
+#navPyra a {
+  text-decoration:none;
+  padding:5px 0;
+  width:25%;
+  font-size:20px;
+  color: #46200E;
+  float:left;
+  text-align:center;
+}
+#navPyra a:hover {
+    background:#c7ca84;
+  color: white;
+  
+}
+
+#wrapper {
+    width:100%;
+    background-color:#f8edcb;
+}
+			/* SIDE CONTENT */
+#side-menu {
+width: 200px;
+float: left;
+margin: 0 auto;
+padding-left: 10px;
+}
+#side-menu p { 
+margin: 1em; 
+}
+#side-menu h2 {
+font-family: 'Times New Roman', sans-serif;
+width: 150px;
+margin: 1em;
+padding: 0.2em;
+font-size: 130%;
+letter-spacing: 3px;
+color: #64382F;
+background: inherit;
+}
+			/* SIDE NAV */		
+#navcontainer ul {
+margin-top: 30px;
+list-style-type: none;
+background: inherit;
+color: #000;
+}
+#navcontainer ul li a {
+padding: 15px;
+color: #CB5C14;
+background: transparent url(images/list-off.gif) left center no-repeat;
+text-decoration: none;
+}
+#navcontainer ul li a:hover {
+background: transparent url(images/list-on.gif) left center no-repeat;
+color: #acaf2c;
+}
+#navcontainer ul li a#current {
+background: transparent url(images/list-active.gif) left center no-repeat;
+color: #666;
+}
+			/* MAIN CONTENT */
+#content {
+width: 900px;
+margin-left: auto;
+margin-right:auto;
+padding: 10px;
+background: #f6e1c3;
+color: #666;
+}
+
+#content h2 {
+font-family: 'Times New Roman', sans-serif;
+/*margin: 1em 0 1em 0;*/
+font-size:150%;
+letter-spacing: 3px;
+background: inherit;
+color: #64382F;
+}
+
+			/* FOOTER */
+#footer {	
+    background-color:#acb236;
+clear: both;
+height: 50px;
+margin-top: 60px;
+padding: 0.5em;
+font-size: 0.9em;
+border-top: 0px solid #e89400;
+text-align: center;
+color: white;
+}
+#footer a {
+color: #000;
+background: transparent;
+}
+#footer a:hover {
+background: transparent;
+color: #64382F;
+text-decoration: underline;
+}
+			/*LINKS*/
+a {
+color : #acaf2c;
+font-weight : normal;
+text-decoration : none;
+background : inherit;
+    position: relative;
+}
+a:hover {
+text-decoration : none;
+color : #CB5C14;
+background : inherit;
+}
+a img {
+border: 0;
+}
+			/*CLASS*/
+.myborder {
+float:left;
+border: 1px solid #eee;
+padding: 10px;
+margin-right: 10px;
+}
+			/* TYPOGRAPHY */
+blockquote {
+font-weight : bold;
+font-style : italic;
+color : #b29b35;
+}
+
+.accordionHeader
+{
+    color: white;
+    background-color:#d3622a;
+    font: 16px PTReg, helvetica, sans-serif;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 3px;
+}
+.accordionContent
+{
+    background-color:#f6e1c3;
+    color: #554848;
+    font: 16px PTReg, helvetica, sans-serif;
+    border: 1px gray;
+    padding:15px;
+}
+
+.GridViewClass td,th
+{
+    padding:10px;
+    background:white;
+}
+.SubGridViewClass td,th
+{
+    color:black;
+    font-weight:bold;
+    padding:10px;
+    background:white;
+}
+
+#Summarycontainer {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    text-align:center;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+#SummGrid, 
+#infoi {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#SummProg {
+    z-index: 10;
+}
