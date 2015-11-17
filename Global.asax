@@ -5,20 +5,20 @@
 <script runat="server">
 
     Protected Sub Application_Start(sender As Object, e As EventArgs)
-       
+
     End Sub
-    
+
     Sub Application_End(ByVal sender As Object, ByVal e As EventArgs)
         ' Code that runs on application shutdown
     End Sub
-        
+
     Sub Application_Error(ByVal sender As Object, ByVal e As EventArgs)
         Try
             If Not Request.ServerVariables("REMOTE_HOST").ToString.Contains("66.249.") Then
                 Dim ex As Exception = Server.GetLastError
                 Dim oMail As MailMessage = New MailMessage()
                 oMail.From = New MailAddress("website@rootcellarboxes.com")
-                oMail.To.Add(New MailAddress("dbccemtp@gmail.com"))
+                oMail.To.Add(New MailAddress("scottw@jkmcomm.com"))
                 oMail.Subject = "Root Cellar Application Error"
                 oMail.Priority = MailPriority.High
                 oMail.IsBodyHtml = True
@@ -40,10 +40,10 @@
                         oMail.Body &= (s & ":") + Request.Form(s) + "<br />"
                     End If
                 Next
-                'oMail.Body &= "Session Values: " + "<br />"
-                'For Each s As String In Session.Keys
-                '    oMail.Body &= (s & ":") + Session(s) + "<br />"
-                'Next
+                oMail.Body &= "Session Values: " + "<br />"
+                For Each s As String In Session.Keys
+                    oMail.Body &= (s & ":") + Session(s) + "<br />"
+                Next
                 oMail.Body &= "Error Stack: " + ex.StackTrace + "<br />"
                 oMail.Body &= "</body>"
                 oMail.Body &= "</html>"
@@ -58,7 +58,7 @@
         Catch ex2 As Exception
 
         End Try
-        
+
     End Sub
 
     Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)
@@ -71,5 +71,5 @@
         ' is set to InProc in the Web.config file. If session mode is set to StateServer 
         ' or SQLServer, the event is not raised.
     End Sub
-       
+
 </script>

@@ -185,6 +185,10 @@ public partial class admin_Subscribers : System.Web.UI.Page
                 }
 
                 myDataReader.Close();
+                if ((mySqlConnection.State == ConnectionState.Open))
+                {
+                    mySqlConnection.Close();
+                }
             }
         }
         finally
@@ -227,6 +231,10 @@ public partial class admin_Subscribers : System.Web.UI.Page
                         FillWeekInfo2(SDateRange);
                     }
                     myDataReader2.Close();
+                    if ((mySqlConnection2.State == ConnectionState.Open))
+                    {
+                        mySqlConnection2.Close();
+                    }
                 }
             }
         }
@@ -297,6 +305,10 @@ public partial class admin_Subscribers : System.Web.UI.Page
                     Console.WriteLine("No rows found.");
                 }
                 myDataReader.Close();
+                if ((mySqlConnection.State == ConnectionState.Open))
+                {
+                    mySqlConnection.Close();
+                }
             }
         }
         finally
@@ -337,6 +349,10 @@ public partial class admin_Subscribers : System.Web.UI.Page
                     Console.WriteLine("No rows found.");
                 }
                 myDataReader.Close();
+                if ((mySqlConnection.State == ConnectionState.Open))
+                {
+                    mySqlConnection.Close();
+                }
             }
         }
         finally
@@ -378,6 +394,10 @@ public partial class admin_Subscribers : System.Web.UI.Page
                     Console.WriteLine("No rows found.");
                 }
                 myDataReader.Close();
+                if ((mySqlConnection.State == ConnectionState.Open))
+                {
+                    mySqlConnection.Close();
+                }
             }
         }
         finally

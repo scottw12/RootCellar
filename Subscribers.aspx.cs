@@ -110,8 +110,6 @@ public partial class admin_Subscribers : System.Web.UI.Page
         }
         //Dim SqlQuary As String = "SELECT DISTINCT subscribers.SubId, subscribers.firstname1, subscribers.lastname1, subscribers.firstname2, subscribers.lastname2, Weekly.paidbounty, Weekly.paidbarnyard, Weekly.paidploughman, Weekly.pickedup, Weekly.vacation, weekly.bounty, weekly.barnyard, weekly.ploughman FROM Weekly INNER JOIN subscribers ON weekly.SubID=subscribers.SubId where active='true' " + week + options + " ORDER BY LastName1, FirstName1"
         string SqlQuary = "SELECT DISTINCT subscribers.SubId, subscribers.firstname1, subscribers.lastname1, subscribers.firstname2, subscribers.lastname2 FROM Weekly INNER JOIN subscribers ON weekly.SubID=subscribers.SubId where " + active + " " + week + options + " ORDER BY LastName1, FirstName1";
-        lit1.Text = SqlQuary;
-   
         DataTable dt = new DataTable();
         dt.Columns.Add("SubId");
         dt.Columns.Add("FirstName1");
@@ -187,6 +185,10 @@ public partial class admin_Subscribers : System.Web.UI.Page
                 }
 
                 myDataReader.Close();
+                if ((mySqlConnection.State == ConnectionState.Open))
+                {
+                    mySqlConnection.Close();
+                }
             }
         }
         finally
@@ -229,6 +231,10 @@ public partial class admin_Subscribers : System.Web.UI.Page
                         FillWeekInfo2(SDateRange);
                     }
                     myDataReader2.Close();
+                    if ((mySqlConnection2.State == ConnectionState.Open))
+                    {
+                        mySqlConnection2.Close();
+                    }
                 }
             }
         }
@@ -299,6 +305,10 @@ public partial class admin_Subscribers : System.Web.UI.Page
                     Console.WriteLine("No rows found.");
                 }
                 myDataReader.Close();
+                if ((mySqlConnection.State == ConnectionState.Open))
+                {
+                    mySqlConnection.Close();
+                }
             }
         }
         finally
@@ -339,6 +349,10 @@ public partial class admin_Subscribers : System.Web.UI.Page
                     Console.WriteLine("No rows found.");
                 }
                 myDataReader.Close();
+                if ((mySqlConnection.State == ConnectionState.Open))
+                {
+                    mySqlConnection.Close();
+                }
             }
         }
         finally
@@ -380,6 +394,10 @@ public partial class admin_Subscribers : System.Web.UI.Page
                     Console.WriteLine("No rows found.");
                 }
                 myDataReader.Close();
+                if ((mySqlConnection.State == ConnectionState.Open))
+                {
+                    mySqlConnection.Close();
+                }
             }
         }
         finally
