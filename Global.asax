@@ -28,21 +28,21 @@
                 oMail.Body &= "URL: " + Request.Url.ToString + "<br />"
                 oMail.Body &= "Referer: " + Request.ServerVariables("HTTP_REFERER").ToString + "<br />"
                 oMail.Body &= "IP: " + Request.ServerVariables("REMOTE_HOST").ToString + "<br />"
-                oMail.Body &= "Error Message: " + ex.ToString() + "<br />"
+                oMail.Body &= "Error Message: " + ex.ToString() + "<br /><br /><br />"
                 If User.Identity.IsAuthenticated Then
-                    oMail.Body &= "User: " + User.Identity.Name + "<br />"
+                    oMail.Body &= "User: " + User.Identity.Name + "<br /><br /><br />"
                 Else
-                    oMail.Body &= "User: Not loged in"
+                    oMail.Body &= "User: Not loged in<br /><br />"
                 End If
-                oMail.Body &= "Form Values: " + "<br />"
+                oMail.Body &= "Form Values: " + "<br /><br />"
                 For Each s As String In Request.Form.AllKeys
                     If s <> "__VIEWSTATE" Then
                         oMail.Body &= (s & ":") + Request.Form(s) + "<br />"
                     End If
                 Next
-                oMail.Body &= "Session Values: " + "<br />"
+                oMail.Body &= "Session Values: " + "<br /><br /><br />"
                 For Each s As String In Session.Keys
-                    oMail.Body &= (s & ":") + Session(s) + "<br />"
+                    oMail.Body &= (s & ":") + Session(s) + "<br /><br /><br />"
                 Next
                 oMail.Body &= "Error Stack: " + ex.StackTrace + "<br />"
                 oMail.Body &= "</body>"

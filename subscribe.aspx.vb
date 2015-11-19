@@ -30,7 +30,7 @@ Partial Class subscribe
     Dim url As String = "https://www.salesvu.com/townvu/api/index.php?request="
     '****************** SalesVu *********************
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Membership.DeleteUser("test.david")
+        '  Membership.DeleteUser("test.jkm")
         '****************** SalesVu *********************
         'isDev = True
         '****************** SalesVu *********************
@@ -513,7 +513,7 @@ Partial Class subscribe
                         Else
                             .Parameters.Add("@ploughman", SqlDbType.Bit).Value = False
                         End If
-                        Dim active As Boolean = True
+                        Dim active As Boolean = False
                         If NewBarnyardBox.Checked = True Or NewBountyBox.Checked = True Or NewPloughmanBox.Checked = True Then
                             active = False
                         End If
@@ -769,7 +769,7 @@ Partial Class subscribe
         End If
         If BarnyardBox.Checked = False And NewBarnyardBox.Checked = False Then
             'GridView1.Columns(2).Visible = False
-            BarnyardNL.Visible = False
+            BarnyardNL.Visible = True
             'For Each Weekrow As GridViewRow In GridView1.Rows
             '    If Weekrow.Cells(0).Text = "Deposit" Then
             '        Dim BarnyardPaid As CheckBox = TryCast(Weekrow.FindControl("BarnyardPaidCheck"), CheckBox)

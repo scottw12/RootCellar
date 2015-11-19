@@ -220,9 +220,9 @@ partial class admin_vacation : RadAjaxPage
         {
             using (mySqlConnection)
             {
-                //mySqlCommand = new SqlCommand("SELECT DISTINCT Week FROM Weekly where subID='" + SubId.ToString() + "' and ((week='1/1/1900') or (week>='" + System.DateTime.Today.AddDays(7) + "'" + SDateRange + ")) ORDER BY [Week]", mySqlConnection);
+              //  mySqlCommand = new SqlCommand("SELECT DISTINCT Week FROM Weekly where subID='" + SubId.ToString() + "' and ((week='1/1/1900') or (week>='" + System.DateTime.Today.AddDays(7) + "'" + SDateRange + ")) ORDER BY [Week]", mySqlConnection);
                 //mySqlCommand = new SqlCommand("SELECT DISTINCT Week FROM Weekly where subID= 4624 and ((week='1/1/1900') or (week>='" + System.DateTime.Today.AddDays(7) + "'" + SDateRange + ")) ORDER BY [Week]", mySqlConnection);
-                mySqlCommand = new SqlCommand("SELECT DISTINCT Week FROM Weekly where subID= 4624 " + SDateRange + " ORDER BY [Week]", mySqlConnection);
+               // mySqlCommand = new SqlCommand("SELECT DISTINCT Week FROM Weekly where subID= 4624 " + SDateRange + " ORDER BY [Week]", mySqlConnection);
                 mySqlConnection.Open();
 
                 myDataReader = mySqlCommand.ExecuteReader();
